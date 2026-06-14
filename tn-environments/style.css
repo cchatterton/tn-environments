@@ -1,0 +1,144 @@
+:root {
+    --tn-padding-x: 0.3rem; 
+    --tn-padding-y: 0.875rem; 
+    --tn-padding: var(--tn-padding-x) var(--tn-padding-y);
+    --tn-dark: #06204A;
+}
+.tn-env-tabs h2 > span {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background: var(--tn-dark);
+    margin-right: 0.5rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+.tn-env-tabs {
+    visibility: visible;
+    & .notice {
+        display: none;
+    }
+    h1 {
+        margin-bottom: 1rem;
+    }
+    & ul.tabs {
+        margin: 0;
+        padding: 0;
+        & .tab-link {
+            margin-bottom: 0;
+        }
+    }
+    & #tab-1 > *:not(.button) {
+        width: calc(100% - 1.5rem);
+    }
+    & .tab-content {
+        border:none;
+        & .summary {
+            border-top: 1px solid #eeeeee;
+            margin-bottom: 2rem;
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+            & tr {
+                border-bottom: 1px solid #eeeeee;
+                & td:last-of-type {
+                    text-align: right;
+                }
+            }
+        }
+        & .form-table th, .form-table td {
+            padding: var(--tn-padding);
+            white-space: nowrap;
+        }
+        p {
+            padding: 0 var(--tn-padding-y);
+            margin: 0;
+            color: #000000;
+            font-size: 14px;
+            line-height: 20px;
+            margin-left: 1.5rem;
+        }
+        h2 {
+            padding: 0 var(--tn-padding-y);
+            margin: 0;
+            color: #000000;
+            font-size: 14px;
+            line-height: 20px;
+            &.top {
+                margin-top: 1rem;
+            }
+            &.bottom {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+    
+    & table.form-table.environments {
+        margin-top: 1rem;
+        border-bottom: 1px solid #eeeeee;
+        display: grid;
+        margin-bottom: 1rem;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        & tr {
+            display: flex;
+            justify-content: space-around;
+            & td {
+                display: inline-grid;
+                align-items: start;
+                width: 100%;
+                & span.wrapper {
+                    border: 1px solid #eeeeee;
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 0.5rem;
+                    overflow: hidden;
+                    & label{
+                        padding: 0.75rem 1rem;
+                        &:has(input:checked) {
+                            background: color-mix(in srgb, var(--tn-dark) 10%, white);
+                        }
+                    }
+                    & input[type="url"]{
+                        border-radius: 0;
+                        border-top: 1px solid #eeeeee;
+                        border-left: 0;
+                        border-bottom: 0;
+                        border-right: 0;
+                        padding: 0.3rem 1rem;
+                        text-overflow: ellipsis;
+                    }
+                    &:has(input:checked) {
+                        border-color: color-mix(in srgb, var(--tn-dark) 25%, white);
+                    }
+                }
+                & a {
+                    background: var(--tn-dark);
+                    text-decoration: none;
+                    padding: 0.5rem 1rem;
+                    color: #ffffff;
+                    border-radius: 0.5rem;
+                    border-color: var(--tn-dark);
+                    margin-top: 1rem;
+                    width: max-content;
+                    opacity: 0.2;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+    .wp-core-ui .tn-env-tabs button {
+        text-decoration: none;
+        padding: 0.25rem 1rem;
+        background: var(--tn-dark);
+        color: #ffffff;
+        border-radius: 0.5rem;
+        margin-top: 1rem;
+        width: max-content;
+    }

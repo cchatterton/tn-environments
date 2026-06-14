@@ -1,0 +1,35 @@
+<?php
+/**
+ * Plugin Name: TN Environments
+ * Plugin URI: https://github.com/cchatterton/tn-environments
+ * Description: Prompts admins to confirm the environment, adds admin environment styling, and displays a build ID.
+ * Version: 1.9
+ * Requires at least: 6.0
+ * Requires PHP: 8.1
+ * Author: Techn
+ * Author URI: https://techn.com.au
+ * Text Domain: tn-environments
+ */
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+define('TN_ENV_VERSION', '1.9');
+define('TN_ENV_PLUGIN_FILE', __FILE__);
+define('TN_ENV_PLUGIN_DIR', plugin_dir_path(__FILE__));
+define('TN_ENV_PLUGIN_URL', plugin_dir_url(__FILE__));
+
+require_once TN_ENV_PLUGIN_DIR . 'functions/environments.php';
+require_once TN_ENV_PLUGIN_DIR . 'functions/styles.php';
+require_once TN_ENV_PLUGIN_DIR . 'functions/login.php';
+require_once TN_ENV_PLUGIN_DIR . 'functions/build_id.php';
+require_once TN_ENV_PLUGIN_DIR . 'functions/assets.php';
+require_once TN_ENV_PLUGIN_DIR . 'functions/github-updater.php';
+
+register_activation_hook(TN_ENV_PLUGIN_FILE, 'tn_env_on_activation');
+
+function tn_env_on_activation(): void {
+    env_selector_activate();
+    env_selector_set_default_values();
+}
