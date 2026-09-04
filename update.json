@@ -1,0 +1,4 @@
+{
+  "version": "1.10",
+  "body": "Adds the environment panel background, a native manual update check, and current GitHub updater compliance."
+}

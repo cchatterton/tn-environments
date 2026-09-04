@@ -2,6 +2,13 @@
 
 All notable changes to TN Environments are recorded here.
 
+## 1.10 - 2026-09-04
+
+- Added a white background and padding to the environment tabs panel.
+- Added a nonce-protected "Check for updates" action and result notices to the Plugins screen.
+- Updated GitHub release discovery to use the repository manifest and public redirect before the API fallback.
+- Aligned update caching, failure backoff, metadata, licensing, and WordPress readme files with the current GitHub updater standard.
+
 ## 1.9 - 2026-06-14
 
 - Renamed the plugin package from `tn-enviroments` to `tn-environments`.
