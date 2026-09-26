@@ -203,9 +203,10 @@ function display_user_activities() {
 // Hook to render activities
 //add_action('admin_notices', 'display_user_activities');
 
-function env_selector_render_settings_page() {
+function env_selector_handle_save() {
 
-    if (isset($_POST['env_selector_save'])) {
+    if (isset($_POST['env_selector_save']) && isset($_GET['page']) && $_GET['page'] === 'env-selector-settings') {
+        if (!current_user_can('manage_options')) { wp_die(esc_html__('You cannot change environment settings.', 'tn-environments')); }
         check_admin_referer('env_selector_save', 'env_selector_nonce');
 
         $selected_env = isset($_POST['wp_env']) ? sanitize_key(wp_unslash($_POST['wp_env'])) : 'development';
@@ -264,6 +265,10 @@ function env_selector_render_settings_page() {
         exit;
     }
 
+}
+add_action('admin_init', 'env_selector_handle_save', 1);
+
+function env_selector_render_settings_page() {
     $stored_env = get_site_option('wp_env_selector', 'development');
     $stored_urls = get_site_option('wp_env_urls', []);
     $environments = ['local', 'development', 'staging', 'production'];
