@@ -3,8 +3,8 @@ Contributors: techn
 Tags: administration, environment, development, staging
 Requires at least: 7.0
 Tested up to: 7.1.2
-Stable tag: 1.10.1
-Requires PHP: 8.5
+Stable tag: 1.10.2
+Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,9 @@ Update discovery and release details are supplied by TN Update Controller. This 
 3. Select and save the appropriate environment when prompted.
 
 == Changelog ==
+
+= 1.10.2 =
+* Lower the PHP requirement to 7.4 to match WordPress 7.0; update the controller installation compatibility check.
 
 = 1.10.1 =
 * Handle environment saves before page output with an explicit capability check.

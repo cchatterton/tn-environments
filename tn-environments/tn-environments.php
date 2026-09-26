@@ -2,9 +2,9 @@
 /**
  * Plugin Name: TN Environments
  * Description: Prompts admins to confirm the environment, adds admin environment styling, and displays a build ID.
- * Version: 1.10.1
+ * Version: 1.10.2
  * Requires at least: 7.0
- * Requires PHP: 8.5
+ * Requires PHP: 7.4
  * Update URI: https://github.com/cchatterton/tn-environments
  * Author: Techn
  * Author URI: https://techn.com.au
@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('TN_ENV_VERSION', '1.10.1');
+define('TN_ENV_VERSION', '1.10.2');
 define('TN_ENV_PLUGIN_FILE', __FILE__);
 define('TN_ENV_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('TN_ENV_PLUGIN_URL', plugin_dir_url(__FILE__));

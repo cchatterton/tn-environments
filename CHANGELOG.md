@@ -2,6 +2,11 @@
 
 All notable changes to TN Environments are recorded here.
 
+## 1.10.2 - 2026-09-26
+
+- Lower the PHP requirement to 7.4, matching WordPress 7.0.
+- Allow the PHP 7.4-compatible TN Update Controller bootstrap.
+
 ## 1.10.1 - 2026-09-26
 
 - Process environment saves before admin output so destination redirects work on WordPress 7; explicitly check save authority.
